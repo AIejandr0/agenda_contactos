@@ -1,0 +1,145 @@
+/* Estilos generales - Tema oscuro */
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    max-width: 860px;
+    margin: 30px auto;
+    padding: 20px;
+    /* background-color: #0d0d0d; muy oscuro */
+    background-color: #14151a;
+    color: #dcdde4;
+}
+
+.auth-container {
+    max-width: 400px;
+    margin: 45px auto;
+}
+
+.card, form {
+    background-color: #1d1e26;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #2d2f3b;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    margin-top: 0;
+    color: #eceef4;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    margin-top: 8px;
+    color: #b5b9cc;
+}
+
+input, button {
+    width: 100%;
+    padding: 9px 10px;
+    margin: 6px 0;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input {
+    background-color: #131419;
+    color: #e2e4ec;
+    border: 1px solid #343746;
+}
+
+input:focus {
+    outline: none;
+    border-color: #633d91;
+}
+
+button {
+    background-color: #4a2875;
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #5b338f;
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-form button {
+    grid-column: span 2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1d1e26;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #2c2e3a;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #252733;
+    color: #c5c8d8;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d1e26;
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid #5b338f;
+}
+
+.btn-link {
+    color: #9f7aea;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+.btn-danger {
+    color: #e06c75;
+    text-decoration: none;
+}
+
+.error {
+    color: #f3a6ad;
+    background-color: #2b171c;
+    border: 1px solid #572630;
+    padding: 9px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.ok {
+    color: #98d8b2;
+    background-color: #162920;
+    border: 1px solid #28503c;
+    padding: 9px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
