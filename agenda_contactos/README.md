@@ -22,4 +22,4 @@ Aplicación web desarrollada en PHP y MySQL en la que se implementa mecanismos d
    * Diríjase a la pestaña **Importar** y ejecutar el archivo `database.sql` incluido en la raíz del proyecto. Esto permite crear automáticamente la base de datos `agenda_contactos` junto con las tablas `usuarios` y `contactos`.
 4. **Configurar credenciales (opcional):** Si su servidor MySQL utiliza una contraseña diferente a la predeterminada de XAMPP, actualice las variables `$username` y `$password` en el archivo `conexion.php`.
 5. **Ejecutar la aplicación:** Abra su navegador web e ingrese a `http://localhost/agenda_contactos/login.php` o `http://localhost/agenda_contactos/registro.php`.
-6. Video explicativo de la actividad 'https://youtu.be/7P9FlEsAC14'
+6. Video explicativo de la actividad `https://youtu.be/7P9FlEsAC14`
