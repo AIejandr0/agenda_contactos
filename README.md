@@ -13,6 +13,8 @@ Aplicación web desarrollada en PHP y MySQL en la que se implementa mecanismos d
 * **Aplicación web en producción:** http://alejandr0-contactos.infinityfreeapp.com/login.php
 * **Video explicativo de la actividad:** https://youtu.be/7P9F1EsAC14
 
+> **Nota sobre la advertencia del navegador:** Al abrir el enlace desplegado en InfinityFree, navegadores como Google Chrome pueden mostrar una pantalla preventiva (*"Sitio peligroso"* o *"La conexión no es privada"*) por tratarse de un subdominio gratuito sin certificado SSL (`HTTP`). Para acceder al sistema, haga clic en **Detalles** y seleccione **visitar este sitio no seguro**.
+
 ## 4. Mejoras implementadas en esta versión
 * **Búsqueda dinámica:** Filtrado de contactos por nombre, correo electrónico o ciudad mediante consultas preparadas (`LIKE`).
 * **Ordenamiento personalizado:** Organización de registros por fecha de creación (más recientes o más antiguos), nombre (A-Z / Z-A) y ciudad (A-Z / Z-A).
