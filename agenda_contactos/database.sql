@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS agenda_contactos CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE agenda_contactos;
-
 CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -16,5 +13,7 @@ CREATE TABLE IF NOT EXISTS contactos (
     telefono VARCHAR(30) NOT NULL,
     correo VARCHAR(100) NOT NULL,
     ciudad VARCHAR(100) NOT NULL,
+    favorito TINYINT(1) NOT NULL DEFAULT 0,
+    fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE
 );
