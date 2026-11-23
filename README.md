@@ -7,19 +7,39 @@ Aplicación web desarrollada en PHP y MySQL en la que se implementa mecanismos d
 * **Lenguaje de servidor:** PHP 8.x (acceso a datos mediante extensión PDO y sentencias preparadas).
 * **Gestor de base de datos:** MySQL / MariaDB.
 * **Frontend:** HTML5, CSS3 y JavaScript.
-* **Entorno de desarrollo y servidor local:** Visual Studio Code y XAMPP (Apache + MySQL).
+* **Entorno de desarrollo y hosting:** Visual Studio Code, XAMPP (Apache + MySQL) e InfinityFree.
 
-## 3. Requisitos para su ejecución
-* Servidor local **XAMPP** (o equivalente) con los servicios **Apache** y **MySQL** activos.
+## 3. Despliegue en línea y video explicativo
+* **Aplicación web en producción:** http://alejandr0-contactos.infinityfreeapp.com/login.php
+* **Video explicativo de la actividad:** https://youtu.be/7P9F1EsAC14
+
+## 4. Mejoras implementadas en esta versión
+* **Búsqueda dinámica:** Filtrado de contactos por nombre, correo electrónico o ciudad mediante consultas preparadas (`LIKE`).
+* **Ordenamiento personalizado:** Organización de registros por fecha de creación (más recientes o más antiguos), nombre (A-Z / Z-A) y ciudad (A-Z / Z-A).
+* **Gestión de favoritos:** Marcado rápido (`Sí` / `No`) desde el formulario o directamente en la tabla, junto con un filtro dedicado para visualizar únicamente los contactos favoritos.
+* **Conexión adaptable:** Detección automática del entorno en `conexion.php` para alternar entre servidor local (`localhost`) y producción (`InfinityFree`).
+
+## 5. Requisitos para su ejecución local
+* Servidor local XAMPP (o equivalente) con los servicios Apache y MySQL activos.
 * PHP 7.4 o superior (recomendado PHP 8.x).
 * Navegador web (Chrome, Firefox, Edge).
 
-## 4. Pasos para instalar la aplicación
+## 6. Pasos para instalar la aplicación
 1. **Clonar o descargar el proyecto:** Coloque la carpeta `agenda_contactos` dentro del directorio raíz de su servidor web local (en XAMPP: `C:\xampp\htdocs\agenda_contactos`).
-2. **Iniciar servicios:** Abra el panel de control de XAMPP e inicie los módulos **Apache** y **MySQL**.
+2. **Iniciar servicios:** Abra el panel de control de XAMPP e inicie los módulos Apache y MySQL.
 3. **Importar la base de datos:**
    * Ingrese a `http://localhost/phpmyadmin` desde su navegador.
-   * Diríjase a la pestaña **Importar** y ejecutar el archivo `database.sql` incluido en la raíz del proyecto. Esto permite crear automáticamente la base de datos `agenda_contactos` junto con las tablas `usuarios` y `contactos`.
-4. **Configurar credenciales (opcional):** Si su servidor MySQL utiliza una contraseña diferente a la predeterminada de XAMPP, actualice las variables `$username` y `$password` en el archivo `conexion.php`.
+   * Cree una base de datos llamada `agenda_contactos`, diríjase a la pestaña **Importar** y ejecute el archivo `database.sql` incluido en la raíz del repositorio.
+4. **Configurar credenciales (opcional):** En entorno local se conecta automáticamente con el usuario `root` sin contraseña; si utiliza credenciales distintas en XAMPP, ajústelas en el bloque `$es_local` de `conexion.php`.
 5. **Ejecutar la aplicación:** Abra su navegador web e ingrese a `http://localhost/agenda_contactos/login.php` o `http://localhost/agenda_contactos/registro.php`.
-6. Video explicativo de la actividad `https://youtu.be/7P9FlEsAC14`
+
+## 7. Capturas de pantalla del sistema en línea
+
+### Inicio de sesión
+![Inicio de sesión](capturas/login.png)
+
+### Panel principal (búsqueda, ordenamiento y favoritos)
+![Panel principal](capturas/panel_principal.png)
+
+### Filtro de contactos favoritos
+![Filtro de favoritos](capturas/favoritos.png)
