@@ -22,19 +22,20 @@ if (!$contacto) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = trim($_POST['nombre']);
+    $nombre   = trim($_POST['nombre']);
     $telefono = trim($_POST['telefono']);
-    $correo = trim($_POST['correo']);
-    $ciudad = trim($_POST['ciudad']);
+    $correo   = trim($_POST['correo']);
+    $ciudad   = trim($_POST['ciudad']);
+    $favorito = (isset($_POST['favorito']) && $_POST['favorito'] == '1') ? 1 : 0;
 
     if (empty($nombre) || empty($telefono) || empty($correo) || empty($ciudad)) {
         $error = "Ningun campo puede quedar vacio.";
     } elseif (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
         $error = "Ingresa un correo electronico valido.";
     } else {
-        $sql_update = "UPDATE contactos SET nombre = ?, telefono = ?, correo = ?, ciudad = ? WHERE id = ? AND id_usuario = ?";
+        $sql_update = "UPDATE contactos SET nombre = ?, telefono = ?, correo = ?, ciudad = ?, favorito = ? WHERE id = ? AND id_usuario = ?";
         $stmt_up = $pdo->prepare($sql_update);
-        $stmt_up->execute([$nombre, $telefono, $correo, $ciudad, $id_contacto, $id_usuario]);
+        $stmt_up->execute([$nombre, $telefono, $correo, $ciudad, $favorito, $id_contacto, $id_usuario]);
 
         header("Location: index.php");
         exit();
@@ -45,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Editar Contaco</title>
+    <title>Editar Contacto</title>
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -68,6 +69,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <label>Ciudad:</label>
             <input type="text" name="ciudad" value="<?php echo htmlspecialchars($contacto['ciudad']); ?>" required>
+
+            <label>Favorito:</label>
+            <select name="favorito">
+                <option value="0" <?php echo $contacto['favorito'] == 0 ? 'selected' : ''; ?>>No</option>
+                <option value="1" <?php echo $contacto['favorito'] == 1 ? 'selected' : ''; ?>>Sí</option>
+            </select>
 
             <button type="submit">Actualizar Datos</button>
             <br><br>
