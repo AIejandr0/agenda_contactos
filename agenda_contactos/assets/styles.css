@@ -5,10 +5,9 @@
 }
 
 body {
-    max-width: 860px;
+    max-width: 960px;
     margin: 30px auto;
     padding: 20px;
-    /* background-color: #0d0d0d; muy oscuro */
     background-color: #14151a;
     color: #dcdde4;
 }
@@ -38,7 +37,7 @@ label {
     color: #b5b9cc;
 }
 
-input, button {
+input, select, button {
     width: 100%;
     padding: 9px 10px;
     margin: 6px 0;
@@ -46,13 +45,13 @@ input, button {
     font-size: 14px;
 }
 
-input {
+input, select {
     background-color: #131419;
     color: #e2e4ec;
     border: 1px solid #343746;
 }
 
-input:focus {
+input:focus, select:focus {
     outline: none;
     border-color: #633d91;
 }
@@ -78,6 +77,78 @@ button:hover {
 
 .grid-form button {
     grid-column: span 2;
+}
+
+/* Barra de búsqueda, ordenamiento y favoritos */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    background-color: #16171e;
+    padding: 12px;
+    margin-bottom: 14px;
+}
+
+.filter-bar input {
+    flex: 1;
+    min-width: 200px;
+    margin: 0;
+}
+
+.filter-bar select {
+    width: auto;
+    margin: 0;
+}
+
+.filter-bar button {
+    width: auto;
+    margin: 0;
+    padding: 9px 16px;
+}
+
+.btn-filter {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #252733;
+    color: #c5c8d8;
+    border: 1px solid #343746;
+}
+
+.btn-filter:hover {
+    border-color: #633d91;
+    color: #ffffff;
+}
+
+.btn-filter.active {
+    background-color: #4a2875;
+    color: #ffffff;
+    border-color: #633d91;
+}
+
+.fav-si, .fav-no {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.fav-si {
+    background-color: #362054;
+    color: #d6bcfa;
+    border: 1px solid #633d91;
+}
+
+.fav-no {
+    background-color: #252733;
+    color: #9ca3af;
+    border: 1px solid #343746;
 }
 
 table {
